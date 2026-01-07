@@ -1,7 +1,7 @@
 import express from "express";
 import * as db from "./db.js"
 
-const POST = 3011;
+const PORT = 3011;
 
 const app = express();
 
@@ -44,4 +44,6 @@ app.delete("/api/books/:id", (req, res) => {
     res.status(200).json({message: "Successful delete!"})
 
 })
-
+app.listen(PORT , () => {
+    console.log(`App listens on PORT: ${PORT}`)
+})
